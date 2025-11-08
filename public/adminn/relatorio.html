@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório de Vendas - Mega Lanches</title>
+
+  <!-- Estilos principais -->
+  <link rel="stylesheet" href="../indexadmin.css">
+  <link rel="stylesheet" href="relatorio.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header>
+    <h1>📊 Relatório de Vendas - Mega Lanches</h1>
+    <nav>
+      <button onclick="window.location.href='/adminn/admin.html#pedidos'">📦 Pedidos</button>
+      <button onclick="window.location.href='/adminn/admin.html#cardapio'">⚙️ Cardápio</button>
+      <button onclick="window.location.href='/adminn/relatorio/pagina'">💰 Relatório</button>
+      <button onclick="window.location.href='/adminn/entregadores.html'">🚴‍♂️ Entregadores</button>
+    </nav>
+  </header>
+
+  <!-- ===================== CONTEÚDO ===================== -->
+  <main class="painel">
+    
+    <!-- ==== RESUMO GERAL ==== -->
+    <section class="resumo">
+      <h2>📋 Resumo Geral</h2>
+      <div id="dados-gerais">
+        <p>Carregando...</p>
+      </div>
+    </section>
+
+    <!-- ==== RELATÓRIOS DIÁRIOS ==== -->
+    <section class="entregadores">
+      <h2>📅 Relatórios Diários e Entregadores</h2>
+      <p style="color:#666;font-size:0.95rem;">Aqui você vê as vendas separadas por dia, forma de pagamento e entregador.</p>
+      <div id="dados-entregadores">
+        <p>Carregando...</p>
+      </div>
+    </section>
+
+    <!-- ==== FORMAS DE PAGAMENTO ==== -->
+    <section class="pagamentos">
+      <h2>💳 Relatório por Forma de Pagamento</h2>
+      <div id="dados-pagamento">
+        <p>Carregando...</p>
+      </div>
+    </section>
+<div class="filtro-relatorio">
+  <label>📅 Data única:</label>
+  <input type="date" id="data-relatorio" onchange="filtrarPorData()">
+
+  <label>🗓️ Período:</label>
+  <input type="date" id="data-inicio">
+  <input type="date" id="data-fim">
+  <button onclick="filtrarPorPeriodo()">Filtrar Período</button>
+
+  <button onclick="renderizarRelatorio()">Ver Todos os Dias</button>
+</div>
+
+  </main>
+
+  <script src="relatorio.js"></script>
+</body>
+</html>

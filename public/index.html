@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mega Lanches</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+  <div class="topo">
+    <div class="logo-area">
+      <img src="logo.png" alt="Mega Lanches" class="logo">
+      <div class="texto-header">
+        <h1>Mega Lanches</h1>
+        <p class="slogan">O sabor que brilha na noite 🍔✨</p>
+      </div>
+    </div>
+
+    <div class="redes">
+      
+  </div>
+
+  <nav class="categorias">
+    <button data-categoria="promocao">Promoção</button>
+    <button data-categoria="hamburguer" class="ativo">Hambúrguer</button>
+    <button data-categoria="frango">Frango</button>
+    <button data-categoria="lombo">Lombo</button>
+    <button data-categoria="refrigerante">Refrigerante</button>
+  </nav>
+
+  <button id="btn-carrinho" title="Ver carrinho">🛒</button>
+</header>
+
+
+  <main id="menu"></main>
+
+  <!-- MODAL ADICIONAR LANCHES -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button id="fechar-modal" class="fechar">&times;</button>
+      <h2 id="modal-nome"></h2>
+      <img id="modal-img" class="modal-img" src="" alt="Lanche">
+
+      <h3>Quantidade</h3>
+      <div id="quantidade-lanche-container" style="margin:10px 0; display:flex; justify-content:center; align-items:center;">
+        <button id="menos-lanche">-</button>
+        <span id="qtd-lanche" style="margin:0 10px;">1</span>
+        <button id="mais-lanche">+</button>
+      </div>
+
+      <h3>Ingredientes</h3>
+      <div id="modal-ingredientes" class="scroll-modal"></div>
+
+      <h3>Adicionais</h3>
+      <div id="modal-adicionais" class="scroll-modal"></div>
+
+      <textarea id="modal-obs" placeholder="Observações"></textarea>
+      <button id="modal-adicionar">Adicionar ao Carrinho</button>
+    </div>
+  </div>
+
+  <!-- MODAL CARRINHO -->
+  <div id="modal-carrinho" class="modal">
+    <div class="modal-content">
+      <button id="fechar-carrinho" class="fechar">&times;</button>
+      <h2>Meu Carrinho</h2>
+      <div id="itens-carrinho" class="scroll-modal"></div>
+      <textarea id="obs-geral" placeholder="Observações gerais"></textarea>
+      <button id="prosseguir">Prosseguir Pedido</button>
+    </div>
+  </div>
+
+  <!-- MODAL FINALIZAR PEDIDO -->
+  <div id="modal-finalizar" class="modal">
+    <div class="modal-content">
+      <button id="fechar-finalizar" class="fechar">&times;</button>
+      <h2>Finalizar Pedido</h2>
+
+      <p id="subtotal-finalizar">Subtotal: R$ 0,00</p>
+      <p id="taxa-finalizar">Taxa de entrega: R$ 0,00</p>
+      <p id="total-finalizar">Total: R$ 0,00</p>
+
+      <input type="text" id="nome-cliente" placeholder="Nome completo">
+      <input type="text" id="telefone-cliente" placeholder="Telefone">
+      <select id="tipo-entrega">
+        <option value="">Tipo de Entrega</option>
+        <option value="Retirada">Retirada</option>
+        <option value="Entrega">Entrega</option>
+      </select>
+      <input type="text" id="endereco" placeholder="Endereço" style="display:none;">
+      <select id="pagamento">
+        <option value="">Forma de pagamento</option>
+        <option value="Pix">Pix</option>
+        <option value="Dinheiro">Dinheiro</option>
+        <option value="Cartão">Cartão</option>
+      </select>
+      <p id="chave-pix" style="display:none;">Chave Pix: 35367190000164</p>
+      <input type="text" id="troco" placeholder="Troco para quanto?" style="display:none;">
+      <button id="confirmar">Confirmar Pedido</button>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <script src="script.js"></script>
+  <a href="https://wa.me/5535997376001" target="_blank" class="btn-float whats">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<a href="https://instagram.com/megalanches_passos?igshid=MmU2YjMzNjRlOQ==" target="_blank" class="btn-float insta">
+  <i class="fa-brands fa-instagram"></i>
+</a>
+<footer>
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3>🍔 Mega Lanches</h3>
+      <p>O sabor que brilha na noite!</p>
+      <p>Desde 2022 servindo os melhores lanches da cidade.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>📍 Endereço</h4>
+      <p>Rua Dirceu Queroiz Parreira, 87 - Cohab V</p>
+      <p>Passos - MG</p>
+      <a href="https://share.google/FYGdEYUzGnSFHuxIk" target="_blank" class="map-link">
+        Ver no Google Maps
+      </a>
+    </div>
+
+    <div class="footer-col">
+      <h4>🕒 Horário de Funcionamento</h4>
+      <p>ter - dom: 18h às 23.30h</p>
+      <h4>📞 Contato</h4>
+      <p>(35) 99737-6001</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Mega Lanches — Todos os direitos reservados.</p>
+    <p>Desenvolvido com ❤️ por Murilo Gabriel</p>
+  </div>
+</footer>
+
+</body>
+</html>

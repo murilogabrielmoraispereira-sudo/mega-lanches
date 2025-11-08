@@ -1,0 +1,364 @@
+/* ====== VARIÁVEIS DE TEMA ====== */
+:root {
+  --bg: #fffaf2;
+  --bg2: #fff;
+  --text: #2c2c2c;
+  --accent: #ff6f00;
+  --accent2: #ff9800;
+  --shadow: rgba(0,0,0,0.1);
+  --card-border: #f1f1f1;
+}
+
+body.dark {
+  --bg: #1b1b1b;
+  --bg2: #242424;
+  --text: #f5f5f5;
+  --accent: #ffa000;
+  --accent2: #ffca28;
+  --shadow: rgba(255,255,255,0.08);
+  --card-border: #333;
+}
+
+/* ====== BASE GERAL ====== */
+body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ====== CABEÇALHO ====== */
+h1 {
+  text-align: center;
+  margin: 25px 0 15px 0;
+  color: var(--accent);
+  font-size: 2rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  letter-spacing: 0.5px;
+}
+
+/* ====== BOTÃO DARK MODE ====== */
+#toggle-theme {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px var(--shadow);
+  z-index: 999;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#toggle-theme:hover {
+  transform: scale(1.1);
+}
+
+/* ====== NAV ====== */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+nav button {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  color: #fff;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 10px 18px;
+  border: none;
+  box-shadow: 0 3px 8px var(--shadow);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+nav button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px) scale(1.05);
+}
+
+nav button:active {
+  transform: scale(0.96);
+}
+
+/* ====== SEÇÕES ====== */
+section {
+  display: none;
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+  padding: 24px 28px;
+  background: var(--bg2);
+  border-radius: 14px;
+  box-shadow: 0 4px 20px var(--shadow);
+  animation: fadeIn 0.4s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+section h2 {
+  margin-bottom: 18px;
+  color: var(--text);
+  border-left: 6px solid var(--accent);
+  padding-left: 12px;
+  font-weight: 600;
+}
+
+/* ====== PAINÉIS ====== */
+#painel-pedidos,
+#painel-cardapio,
+#painel-entregues {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+#painel-pedidos.active,
+#painel-cardapio.active,
+#painel-entregues.active {
+  display: flex;
+}
+
+/* ====== LISTA DE LANCHES ====== */
+#lista-lanches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.lanche-item {
+  background: var(--bg2);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+}
+
+.lanche-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px var(--shadow);
+}
+
+.lanche-item h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.lanche-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.lanche-item p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.lanche-item .acoes {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lanche-item .acoes button {
+  background: #1976d2;
+  color: white;
+  font-weight: 600;
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: none;
+  transition: 0.25s;
+}
+
+.lanche-item .acoes button:hover {
+  background: #0d47a1;
+  transform: scale(1.05);
+}
+
+/* ====== SELO INDISPONÍVEL ====== */
+.lanche-item .selo {
+  position: absolute;
+  top: 12px;
+  right: -40px;
+  background: #dc3545;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 6px 50px;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+/* ====== MODAL ====== */
+#modal-lanche {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.65);
+  z-index: 999;
+  backdrop-filter: blur(2px);
+}
+
+.modal-conteudo {
+  background: var(--bg2);
+  padding: 30px;
+  border-radius: 14px;
+  width: 420px;
+  box-shadow: 0 6px 25px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: zoomIn 0.25s ease;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-conteudo h2 {
+  text-align: center;
+  color: var(--accent);
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.modal-conteudo input,
+.modal-conteudo textarea,
+.modal-conteudo select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  background: #fafafa;
+  transition: border 0.2s ease, background 0.3s ease;
+}
+
+body.dark .modal-conteudo input,
+body.dark .modal-conteudo textarea,
+body.dark .modal-conteudo select {
+  background: #2e2e2e;
+  border: 1px solid #444;
+  color: #f5f5f5;
+}
+
+.modal-conteudo input:focus,
+.modal-conteudo textarea:focus,
+.modal-conteudo select:focus {
+  border-color: var(--accent2);
+  outline: none;
+}
+
+.modal-conteudo button {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.modal-conteudo button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+/* ====== PEDIDOS ====== */
+.pedido {
+  background: var(--bg2);
+  border-radius: 14px;
+  padding: 18px 22px;
+  box-shadow: 0 4px 20px var(--shadow);
+  transition: all 0.3s ease;
+  border-left: 6px solid var(--accent);
+}
+
+.pedido:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px var(--shadow);
+}
+
+.pedido h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pedido p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+/* ====== BOTÕES DE PEDIDO ====== */
+.pedido button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.pedido button:hover {
+  transform: scale(1.05);
+}
+
+.pedido button:nth-of-type(1) { background: #ff9800; }
+.pedido button:nth-of-type(2) { background: #2196f3; }
+.pedido button:nth-of-type(3) { background: #4caf50; }
+
+.pedido[data-status="entregue"] { opacity: 0.8; }
+
+/* ====== ENTREGADORES ====== */
+.entregador-card {
+  background: var(--bg2);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 10px 0;
+  box-shadow: 0 0 8px var(--shadow);
+  transition: 0.25s ease;
+}
+
+.entregador-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px var(--shadow);
+}

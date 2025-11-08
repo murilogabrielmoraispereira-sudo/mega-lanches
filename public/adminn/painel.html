@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel Principal - Mega Lanches</title>
+  <link rel="stylesheet" href="indexadmin.css">
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #ff6f00;
+      color: white;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    main {
+      margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .painel-opcoes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      max-width: 800px;
+    }
+
+    .btn-painel {
+      background-color: #ff6f00;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 20px 40px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: 0.3s;
+    }
+
+    .btn-painel:hover {
+      background-color: #e65c00;
+      transform: scale(1.05);
+    }
+
+    .logo {
+      font-size: 60px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🍔 Painel de Administração - Mega Lanches</h1>
+  </header>
+
+  <main>
+    <div class="logo">🔥</div>
+    <h2>Bem-vindo, administrador!</h2>
+    <p>Escolha uma das opções abaixo para gerenciar o sistema:</p>
+
+    <div class="painel-opcoes">
+      <button class="btn-painel" onclick="location.href='admin.html'">📦 Ver Pedidos</button>
+      <button class="btn-painel" onclick="location.href='admin.html#cardapio'">📋 Gerenciar Cardápio</button>
+      <button class="btn-painel" onclick="location.href='admin.html#prontos'">✅ Pedidos Prontos</button>
+      <button class="btn-painel" onclick="location.href='admin.html#entregues'">📬 Pedidos Entregues</button>
+      <button class="btn-painel" onclick="location.href='cardapio.html'">🍔 Ver Cardápio Público</button>
+      <button class="btn-painel" onclick="location.href='login.html'">🔒 Sair</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Mega Lanches - Painel Administrativo</p>
+  </footer>
+</body>
+</html>
