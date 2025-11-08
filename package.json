@@ -1,0 +1,16 @@
+{
+  "name": "mega-lanches",
+  "version": "1.0.0",
+  "description": "Sistema Mega Lanches com painel admin e relatórios",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "cors": "^2.8.5",
+    "multer": "^2.0.2",
+    "fs-extra": "^11.2.0"
+  }
+}
