@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1762564906341,
+    "cliente": "murilo",
+    "telefone": "3123123",
+    "endereco": "12121",
+    "tipoEntrega": "Retirada",
+    "pagamento": "Cartão",
+    "troco": "",
+    "carrinho": [
+      {
+        "nome": "X-SALADA",
+        "preco": 20,
+        "adicionais": [],
+        "removidos": [],
+        "obs": "",
+        "qtd": 1
+      }
+    ],
+    "obsGeral": "",
+    "status": "entregue",
+    "entregueEm": "07/11/2025, 22:21:56"
+  },
+  {
+    "id": 1762564963706,
+    "cliente": "murilo",
+    "telefone": "3123123",
+    "endereco": "12121",
+    "tipoEntrega": "Entrega",
+    "pagamento": "Dinheiro",
+    "troco": "30",
+    "carrinho": [
+      {
+        "nome": "X-BACON",
+        "preco": 20,
+        "adicionais": [],
+        "removidos": [],
+        "obs": "",
+        "qtd": 1
+      }
+    ],
+    "obsGeral": "",
+    "status": "entregue",
+    "entregador": "rogerio",
+    "saiuParaEntrega": "07/11/2025, 22:22:58",
+    "entregueEm": "07/11/2025, 22:23:00"
+  },
+  {
+    "id": 1762566051028,
+    "cliente": "murilo",
+    "telefone": "3123123",
+    "endereco": "12121",
+    "tipoEntrega": "Entrega",
+    "pagamento": "Dinheiro",
+    "troco": "30",
+    "carrinho": [
+      {
+        "nome": "X-TUDO",
+        "preco": 20,
+        "adicionais": [],
+        "removidos": [],
+        "obs": "",
+        "qtd": 2
+      }
+    ],
+    "obsGeral": "",
+    "status": "entregue",
+    "entregador": "gustavo",
+    "saiuParaEntrega": "07/11/2025, 22:40:58",
+    "entregueEm": "07/11/2025, 22:41:05"
+  }
+]
